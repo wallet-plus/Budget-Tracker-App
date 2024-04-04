@@ -37,8 +37,9 @@
               "src/assets/css/style.css",
               "src/styles.scss"
             ],
-            "scripts": [              
-              "src/assets/js/popper.min.js"
+            "scripts": [      
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
