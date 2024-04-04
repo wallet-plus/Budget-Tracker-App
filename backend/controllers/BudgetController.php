@@ -47,7 +47,7 @@ class BudgetController extends \yii\web\Controller
             'class' => \yii\filters\Cors::class,
             'cors' => [
                 'Origin' => ['http://localhost:4200', 'https://secure.walletplus.in', 'https://walletplus.in'],
-                'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
+                'Access-Control-Request-Method' => ['FETCH','GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
                 'Access-Control-Allow-Credentials' => true,
                 'Access-Control-Request-Headers' => ['*'],
                 'Access-Control-Max-Age' => 86400,
@@ -55,7 +55,6 @@ class BudgetController extends \yii\web\Controller
         ];
         return $behaviors;
     }
- 
 
 
 
@@ -91,7 +90,6 @@ class BudgetController extends \yii\web\Controller
 
         
         try {
-            // Set content-type header for sending HTML email 
             $headers = "MIME-Version: 1.0" . "\r\n"; 
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
             $headers .= 'From: '.$fromName.'<'.$from.'>' . "\r\n"; 
@@ -100,13 +98,6 @@ class BudgetController extends \yii\web\Controller
                 $headers .= 'Cc: '.$email['cc_email'] . "\r\n";  
             }
            
-
-            // echo $to;
-            // echo $subject;
-            // echo $htmlContent;
-            // echo $headers;
-            // exit("Test Email template");
-
 
             if(mail($to, $subject, $htmlContent, $headers)){ 
                 return true;
@@ -197,52 +188,7 @@ class BudgetController extends \yii\web\Controller
                 }
                 $query->orderBy(['bt_expense.id_expense' => SORT_DESC]);
 
-                // if($data['type'] == 0){
-                //     $query = (new Query())
-                //     ->select('*')
-                //     ->from('bt_expense')
-                //     ->leftJoin('bt_category category', 'category.id_category = bt_expense.id_category')
-                //     ->leftJoin('bt_type type', 'type.id_type = category.id_type')
-                //     ->where(['bt_expense.id_customer' => $user->id])
-                //     ->orderBy(['bt_expense.id_expense' => SORT_DESC]);
-                // }else{
-
-                //     if(isset($data['queryParam']) && isset($data['category']) ){
-                //         $query = (new Query())
-                //         ->select('*')
-                //         ->from('bt_expense')
-                //         ->leftJoin('bt_category category', 'category.id_category = bt_expense.id_category')
-                //         ->leftJoin('bt_type type', 'type.id_type = category.id_type')
-                //         ->where(['type.id_type' => $data['type'], 'bt_expense.id_customer' => $user->id])
-                //         ->andWhere(['OR',
-                //             ['like', 'bt_expense.expense_name', $data['queryParam']],
-                //             ['like', 'bt_expense.description', $data['queryParam']]
-                //         ])
-                //         ->andWhere(['bt_expense.id_category' => $data['category']])
-                //         ->orderBy(['bt_expense.id_expense' => SORT_DESC]);
-                        
-                //     }if(isset($data['queryParam'])  && !isset($data['category']) ){
-                //         $query = (new Query())
-                //         ->select('*')
-                //         ->from('bt_expense')
-                //         ->leftJoin('bt_category category', 'category.id_category = bt_expense.id_category')
-                //         ->leftJoin('bt_type type', 'type.id_type = category.id_type')
-                //         ->where(['type.id_type' => $data['type'], 'bt_expense.id_customer' => $user->id])
-                //         ->andWhere(['OR',
-                //             ['like', 'bt_expense.expense_name', $data['queryParam']],
-                //             ['like', 'bt_expense.description', $data['queryParam']]
-                //         ])
-                //         ->orderBy(['bt_expense.id_expense' => SORT_DESC]);
-                //     }else{
-                //         $query = (new Query())
-                //         ->select('*')
-                //         ->from('bt_expense')
-                //         ->leftJoin('bt_category category', 'category.id_category = bt_expense.id_category')
-                //         ->leftJoin('bt_type type', 'type.id_type = category.id_type')
-                //         ->where(['type.id_type' => $data['type'], 'bt_expense.id_customer' => $user->id])
-                //         ->orderBy(['bt_expense.id_expense' => SORT_DESC]);
-                //     }
-                // }
+                
 
                 $command = $query->createCommand();
                 $list = $command->queryAll();
@@ -285,13 +231,9 @@ class BudgetController extends \yii\web\Controller
                 ->where(['bt_expense.id_expense' => $id]);
                 
                 $command = $query->createCommand();
-
-                // echo $query->createCommand()->getRawSql();
-                // exit;
-
                 $data = $command->queryOne();
                 $response['data'] = $data;
-                $response['imagePath'] = 'https://walletplus.in/expenses/';
+                $response['imagePath'] = 'http://localhost/walletplus/expenses/';
                 Yii::$app->response->statusCode = 200;
                 return \yii\helpers\Json::encode($response);
             } else {

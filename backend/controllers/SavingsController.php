@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use app\models\ExpenseCategory;
 use yii\web\UploadedFile;
+use yii\db\Expression;
 
 /**
  * SavingsController implements the CRUD actions for Expense model.
@@ -120,6 +121,9 @@ class SavingsController extends Controller
         $model = new Expense();
 
         if ($this->request->isPost) {
+            $model->id_customer = Yii::$app->user->id;
+            $model->created_by = Yii::$app->user->id;
+            $model->date_created = new Expression('NOW()');
 
             if (isset($_FILES['Expense']['name']['imageFile'])) {
                 $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
@@ -161,6 +165,9 @@ class SavingsController extends Controller
 
         
             if ($model->load(Yii::$app->request->post())) {
+                $model->date_updated = new Expression('NOW()');
+                $model->updated_by = Yii::$app->user->id;
+
                 $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
         
                 if ($model->imageFile !== null) {

@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\ExpenseCategory;
 use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;
+use yii\db\Expression;
 
 /**
  * ExpenseController implements the CRUD actions for Expense model.
@@ -92,8 +93,11 @@ class ExpenseController extends Controller
         $model = new Expense();
 
         if ($this->request->isPost) {
+            $model->id_customer = Yii::$app->user->id;
+            $model->created_by = Yii::$app->user->id;
+            $model->date_created = new Expression('NOW()');
 
-            $model->updated_by = Yii::$app->user->id;
+            
 
 
             if (isset($_FILES['Expense']['name']['imageFile'])) {
@@ -134,6 +138,7 @@ class ExpenseController extends Controller
 
         
             if ($model->load(Yii::$app->request->post())) {
+                $model->date_updated = new Expression('NOW()');
                 $model->updated_by = Yii::$app->user->id;
                 $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
         

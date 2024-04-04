@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use app\models\ExpenseCategory;
 use yii\web\UploadedFile;
+use yii\db\Expression;
 
 /**
  * IncomeController implements the CRUD actions for Expense model.
@@ -86,11 +87,14 @@ class IncomeController extends Controller
      */
     public function actionCreate()
     {
+        
         $catagories = ArrayHelper::map(ExpenseCategory::find()->orderBy(['category_name' => SORT_ASC])->where(['=','id_type','3'])->all(), 'id_category', 'category_name');
         $model = new Expense();
 
         if ($this->request->isPost) {
-
+            $model->id_customer = Yii::$app->user->id;
+            $model->created_by = Yii::$app->user->id;
+            $model->date_created = new Expression('NOW()');
 
             if (isset($_FILES['Expense']['name']['imageFile'])) {
                 $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
@@ -99,6 +103,7 @@ class IncomeController extends Controller
                     $imagePath = Yii::getAlias('@webroot') . '/expenses/' . $imageName;
                     $model->imageFile->saveAs($imagePath);
                     $model->image = $imageName;
+                    
                 }
             }
 
@@ -128,10 +133,15 @@ class IncomeController extends Controller
         $catagories = ArrayHelper::map(ExpenseCategory::find()->orderBy(['category_name' => SORT_ASC])->where(['=','id_type','3'])->all(), 'id_category', 'category_name');
         $model = $this->findModel($id_expense);
 
+      
+
         $oldImage = $model->image; // save the old image name for later use
 
         
             if ($model->load(Yii::$app->request->post())) {
+
+                $model->date_updated = new Expression('NOW()');
+                $model->updated_by = Yii::$app->user->id;
                 $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
         
                 if ($model->imageFile !== null) {
@@ -148,6 +158,7 @@ class IncomeController extends Controller
                     $model->imageFile->saveAs($imagePath);
                     $model->image = $imageName;
                     $model->imageFile = null;
+                    
                     
                 }
                 if ($model->save()) {
