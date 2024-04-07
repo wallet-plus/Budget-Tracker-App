@@ -31,16 +31,9 @@ Here's why:
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* PHP
-* Yii2
+* HTML, CSS, JavaScript, Bootstrap, JQuery
+* PHP, Yii2
 * MySQL
-* HTML
-* CSS
-* JAVASCRIPT
-* BOOTSTRAP
-* JQuery
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
