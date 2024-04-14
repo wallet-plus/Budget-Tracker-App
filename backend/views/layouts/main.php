@@ -158,6 +158,17 @@ use yii\helpers\Url;
                   </ul>
                 </div>
                 <div class="col-md-4 col-6 footer-list-28 mt-5">
+                  <h6 class="footer-title-28"><?php echo Html::a('Budget', ['/site/budget-planner']);?></h6>
+                  <ul>
+                    <li><?php echo Html::a('Budget Tracker', ['/site/budget-planner']);?></li>
+                    <li><?php echo Html::a('Budget Planner', ['/site/budget-planner']);?></li>
+                    <li><?php echo Html::a('budget maker', ['/site/budget-planner']);?></li>
+                    <li><?php echo Html::a('monthly budget', ['/site/budget-planner']);?></li>
+                    <li><?php echo Html::a('online budget planner', ['/site/budget-planner']);?></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-4 col-6 footer-list-28 mt-5">
                   <h6 class="footer-title-28">Product help</h6>
                   <ul>
                     <li><?php echo Html::a('Home', ['/']);?></li>
@@ -166,11 +177,11 @@ use yii\helpers\Url;
                     <li><?php echo Html::a('Login', 'https://secure.walletplus.in/signin');?></li>
                   </ul>
                 </div>
-                <div class="col-md-4 footer-list-28 mt-5">
+                <!-- <div class="col-md-4 footer-list-28 mt-5">
                   <h6 class="footer-title-28">Download</h6>
                   <a href="#playstore"><img src="<?php echo Url::base('https')?>/images/googleplay.png" class="img-fluid" alt=""></a>
                   <a href="#appstore"><img src="<?php echo Url::base()?>/images/appstore.png" class="img-fluid mt-md-2" alt=""></a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

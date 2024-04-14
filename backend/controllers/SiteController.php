@@ -615,6 +615,30 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+
+    /**
+     * Displays Budget Planner page.
+     *
+     * @return string
+     */
+    public function actionBudgetPlanner()
+    {
+
+        if (!Yii::$app->user->isGuest) {
+            $this->redirect(['dashboard']);
+        }
+
+        // Add a meta description for SEO
+        $description = 'Discover our free online WalletPlus Budget Planner calculator to gain a better understanding of your money coming in and out, and how to improve your finances.';
+        $this->view->registerMetaTag(['name' => 'description', 'content' => $description]);
+
+        // Add meta keywords for SEO
+        $keywords = 'budget planner, budget calculator, financial management, expense tracking';
+        $this->view->registerMetaTag(['name' => 'keywords', 'content' => $keywords]);
+
+        return $this->render('budget-planner');
+    }
+
     public function actionAjax()
     {
         // if(isset(Yii::$app->request->post('test'))){
