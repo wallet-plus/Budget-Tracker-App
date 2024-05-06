@@ -161,7 +161,7 @@ class SiteController extends Controller
         }
         /** Week wise */
 
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/dashboard/applayout';
         return $this->render('dashboard',[
             'expenseTotal' => ($expenseTotal)? $expenseTotal : 0,   
             'expenditureTotal' => ($expenditureTotal)?$expenditureTotal:0,    
