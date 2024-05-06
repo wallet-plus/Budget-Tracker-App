@@ -24,7 +24,7 @@ class EmailController extends Controller
         //     // return Yii::$app->getResponse()->redirect(array(Url::to(['site/login'])));
         // }
 
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/admin/applayout';
         parent::__construct($id, $module, $config);
     }
     

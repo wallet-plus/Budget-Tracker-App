@@ -17,7 +17,7 @@ class CardsTypeController extends Controller
 
     public function __construct($id, $module, $config = [])
     {
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/admin/applayout';
         parent::__construct($id, $module, $config);
     }
     /**

@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
 class TypeController extends Controller
 {
     // public function contstructor(){
-    //     $this->layout = '@app/views/layouts/applayout';
+    //     $this->layout = '@app/views/admin/applayout';
     // }
     /**
      * @inheritDoc
@@ -44,7 +44,7 @@ class TypeController extends Controller
     {
         $searchModel = new CategorySearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/admin/applayout';
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -59,7 +59,7 @@ class TypeController extends Controller
      */
     public function actionView($id_type)
     {
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/admin/applayout';
         return $this->render('view', [
             'model' => $this->findModel($id_type),
         ]);
@@ -85,7 +85,7 @@ class TypeController extends Controller
         } else {
             $model->loadDefaultValues();
         }
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/admin/applayout';
         return $this->render('create', [
             'model' => $model,
             'catagories' =>$catagories
@@ -109,7 +109,7 @@ class TypeController extends Controller
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id_type' => $model->id_type]);
         }
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/admin/applayout';
         return $this->render('update', [
             'model' => $model,
             'catagories' =>$catagories

@@ -157,7 +157,7 @@ class SiteController extends Controller
         }
         /** Week wise */
 
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/admin/applayout';
         return $this->render('dashboard',[
             'expenseTotal' => ($expenseTotal)? $expenseTotal : 0,   
             'expenditureTotal' => ($expenditureTotal)?$expenditureTotal:0,    
@@ -281,7 +281,7 @@ class SiteController extends Controller
      */
     public function actionProfile()
     {
-        $this->layout = '@app/views/layouts/applayout';
+        $this->layout = '@app/views/admin/applayout';
 
         $model = Customer::findOne(['id' => Yii::$app->user->id]) ;
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
