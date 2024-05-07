@@ -70,7 +70,7 @@ class SiteController extends Controller
     {
 
 
-        $this->layout = '@app/themes/basic/views/admin/applayout';
+        
         // $this->layout = '@app/views/admin/applayout';
         // function x_week_range($date) {
             $date = date("Y/m/d");
@@ -164,6 +164,7 @@ class SiteController extends Controller
         /** Week wise */
 
         $themeName = 'basic';
+        $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
         $theme = Yii::$app->view->theme;
         $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
 
