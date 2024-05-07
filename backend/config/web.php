@@ -27,10 +27,10 @@ $config = [
     'components' => [
         'view' => [
             'theme' => [
-                'basePath' => '@app/themes/basic',
+                'basePath' => '@webroot/themes/basic',
                 'baseUrl' => '@web/themes/basic',
                 'pathMap' => [
-                    '@app/views' => '@app/themes/basic',
+                    '@app/views' => '@webroot/themes/basic',
                 ],
             ],
         ],

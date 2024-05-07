@@ -70,6 +70,8 @@ class SiteController extends Controller
     {
 
 
+        $this->layout = '@app/themes/basic/views/admin/applayout';
+        // $this->layout = '@app/views/admin/applayout';
         // function x_week_range($date) {
             $date = date("Y/m/d");
             
@@ -161,7 +163,10 @@ class SiteController extends Controller
         }
         /** Week wise */
 
-        $this->layout = '@app/views/admin/applayout';
+        $themeName = 'basic';
+        $theme = Yii::$app->view->theme;
+        $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
+
         return $this->render('dashboard',[
             'expenseTotal' => ($expenseTotal)? $expenseTotal : 0,   
             'expenditureTotal' => ($expenditureTotal)?$expenditureTotal:0,    
