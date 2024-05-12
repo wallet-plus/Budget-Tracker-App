@@ -9,8 +9,8 @@ use yii\bootstrap4\Html;
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Aamir</h3>
-                  <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
+                  <h3 class="font-weight-bold">Welcome back,  <?php echo Yii::$app->user->identity->firstname;?> <?php echo Yii::$app->user->identity->lastname;?>!</h3>
+                  <h6 class="font-weight-normal mb-0">Do not save what is left after spending, but spend what is left after saving.  <span class="text-primary">– Warren Buffett</span></h6>
                 </div>
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
@@ -54,18 +54,28 @@ use yii\bootstrap4\Html;
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
-                      <p class="mb-4">Today’s Bookings</p>
-                      <p class="fs-30 mb-2">4006</p>
-                      <p>10.00% (30 days)</p>
+                      <p class="mb-4">Remaining</p>
+                      <p class="fs-30 mb-2">
+                        <?php 
+                            $remaining = number_format((float)$incomeTotal - ($expenseTotal + $expenditureTotal), 2, '.', '');
+                            echo preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $remaining);
+                        ?>
+                      </p>
+                      <p>In Wallet</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-dark-blue">
                     <div class="card-body">
-                      <p class="mb-4">Total Bookings</p>
-                      <p class="fs-30 mb-2">61344</p>
-                      <p>22.00% (30 days)</p>
+                      <p class="mb-4">Total Income</p>
+                      <p class="fs-30 mb-2">
+                      <?php 
+                            $incomeTotal = number_format((float)$incomeTotal, 2, '.', '');
+                            echo preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $incomeTotal);
+                            ?>
+                      </p>
+                      <p>Rs. <?php echo round($incomeTotal / 30, 2) ?>/ Day</p>
                     </div>
                   </div>
                 </div>
@@ -74,29 +84,39 @@ use yii\bootstrap4\Html;
                 <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                   <div class="card card-light-blue">
                     <div class="card-body">
-                      <p class="mb-4">Number of Meetings</p>
-                      <p class="fs-30 mb-2">34040</p>
-                      <p>2.00% (30 days)</p>
+                      <p class="mb-4">Total Expenses</p>
+                      <p class="fs-30 mb-2">
+                      <?php 
+                            $expenseTotal = number_format((float)$expenseTotal, 2, '.', '');
+                            echo preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $expenseTotal);
+                            ?>
+                      </p>
+                      <p>Rs. <?php echo round($expenseTotal / 30, 2)?> / Day</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
                     <div class="card-body">
-                      <p class="mb-4">Number of Clients</p>
-                      <p class="fs-30 mb-2">47033</p>
-                      <p>0.22% (30 days)</p>
+                      <p class="mb-4">Savings</p>
+                      <p class="fs-30 mb-2">
+                      <?php 
+                          $expenditureTotal = number_format((float)$expenditureTotal, 2, '.', '');
+                          echo preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $expenditureTotal);
+                          ?>
+                      </p>
+                      <p>Savings</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Order Details</p>
+                  <p class="card-title">Day Wise Expense Chart (Rs. <span id="total-amount"></span>)</p>
                   <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                   <div class="d-flex flex-wrap mb-5">
                     <div class="mr-5 mt-3">
@@ -618,6 +638,6 @@ use yii\bootstrap4\Html;
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           
         </div>

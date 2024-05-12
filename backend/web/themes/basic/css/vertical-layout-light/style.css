@@ -10158,19 +10158,6 @@ pre code {
   padding: 0.3rem;
 }
 
-.table-bordered {
-  border: 1px solid #CED4DA;
-}
-
-.table-bordered th,
-.table-bordered td {
-  border: 1px solid #CED4DA;
-}
-
-.table-bordered thead th,
-.table-bordered thead td {
-  border-bottom-width: 2px;
-}
 
 .table-borderless th,
 .table-borderless td,
@@ -19064,10 +19051,7 @@ a.text-dark:hover, a.text-dark:focus {
   .jsgrid .jsgrid-table td, .table th, .jsgrid .jsgrid-table th {
     background-color: #ffffff !important;
   }
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid #dee2e6 !important;
-  }
+
   .table-dark {
     color: inherit;
   }

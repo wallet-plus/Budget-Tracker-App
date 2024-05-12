@@ -45,11 +45,13 @@ AppAsset::register($this);
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Admin</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="<?= Url::to(['/category/index']);?>">Categories</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?= Url::to(['/cards-type']);?>">Cards Type</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= Url::to(['/email-templates']);?>">Email Templates</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= Url::to(['/email']);?>">Emails</a></li>
               </ul>
@@ -57,19 +59,7 @@ AppAsset::register($this);
           </li>
           <?php } ?>
 
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Admin</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?= Url::to(['/category/index']);?>">Categories</a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?= Url::to(['/cards-type']);?>">Cards Type</a></li>
-              </ul>
-            </div>
-          </li>
+          
           
           <li class="nav-item">
             <a class="nav-link" href="<?= Url::to(['/cards']);?>">

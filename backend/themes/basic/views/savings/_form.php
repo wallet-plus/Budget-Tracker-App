@@ -14,7 +14,7 @@ use app\models\Category
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 <form class="form-sample">
     <?php
-    echo $form->field($model, 'id_type')->hiddenInput(['value' => 3])->label(false);
+    echo $form->field($model, 'id_type')->hiddenInput(['value' => 1])->label(false);
     ?>
     <p class="card-description">
         Details
@@ -96,7 +96,7 @@ use app\models\Category
     </div>
 
     <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-primary mr-2']) ?>
-    <?= Html::a('Cancel', ['/income/index'], ['class' => 'btn btn-light']) ?>
+    <?= Html::a('Cancel', ['/savings/index'], ['class' => 'btn btn-light']) ?>
 </form>
 
 

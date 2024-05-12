@@ -8,7 +8,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Income');
+$this->title = Yii::t('app', 'Savings');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

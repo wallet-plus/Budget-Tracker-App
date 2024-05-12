@@ -4,15 +4,13 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-
+use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Income');
+$this->title = Yii::t('app', 'Expenses');
 $this->params['breadcrumbs'][] = $this->title;
-?>
-
-<!-- Your other HTML content goes here -->
+?><!-- Your other HTML content goes here -->
 <div class="content-wrapper">
   <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">

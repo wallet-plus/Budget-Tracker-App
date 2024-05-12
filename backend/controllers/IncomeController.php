@@ -13,6 +13,7 @@ use app\models\ExpenseCategory;
 use yii\web\UploadedFile;
 use yii\db\Expression;
 
+
 /**
  * IncomeController implements the CRUD actions for Expense model.
  */
@@ -55,6 +56,7 @@ class IncomeController extends Controller
      */
     public function actionIndex()
     {
+
         $dataProvider = new ActiveDataProvider([
             'query' => Expense::find()->orderBy(['id_expense' => SORT_DESC])->where(['id_type'=>3 , 'id_customer' =>Yii::$app->user->id]),
             'pagination' => [
@@ -67,6 +69,10 @@ class IncomeController extends Controller
             ],
         ]);
 
+        // Set flash message
+        // Yii::$app->session->setFlash('success', 'This is the message');
+
+        
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
