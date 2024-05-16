@@ -9,9 +9,9 @@
     An awesome README template to jumpstart your projects!
     <br />
     <br />
-    <a href="https://secure.walletplus.in">View Demo</a>
+    <a href="https://walletplus.in">View Demo</a>
     ·
-    <a href="https://github.com/Wallet-Plus/Budget-Tracker-App/issues">Report Bug</a>
+    <a href="https://github.com/fareed543/WalletPlus/issues">Report Bug</a>
   </p>
 </div>
 
@@ -24,6 +24,7 @@ Here's why:
 * Budgeting and spending tracking : WalletPlus can help you track your spending and create a budget. WalletPlus offer features that allow you to monitor your transactions and expenses, giving you greater control over your finances.
 * Security : WalletPlus more secure than traditional payment methods because WalletPlus use encryption technology to protect your payment information. This means that your sensitive information is not stored on the merchant's server, reducing the risk of fraud and identity theft.
 * Convenience : WalletPlus allow you to store all your payment information in one place, making it easy to access and use whenever you need. You don't need to carry multiple credit cards or cash, which can be particularly useful when traveling.
+* Loyalty rewards : WalletPlus offer loyalty rewards and cashback programs for using their platform. This can be an added benefit for users who frequently make purchases using their digital wallet.
 
 
 
@@ -31,9 +32,34 @@ Here's why:
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* HTML, CSS, JavaScript, Bootstrap, JQuery
-* PHP, Yii2
+* PHP
+* Yii2
 * MySQL
+* HTML
+* CSS
+* JAVASCRIPT
+* BOOTSTRAP
+* JQuery
+
+
+
+CONFIGURATION
+-------------
+
+### Database
+
+Edit the file `config/db.php` with real data, for example:
+
+```php
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'username' => 'root',
+    'password' => '1234',
+    'charset' => 'utf8',
+];
+```
+
 
 <!-- CONTRIBUTING -->
 ## Contributing
