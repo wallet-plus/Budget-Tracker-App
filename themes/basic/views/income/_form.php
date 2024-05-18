@@ -71,8 +71,9 @@ use app\models\Category
     </div>
     
 
+  
     <div class="row">
-        <div class="col-md-12">
+    <div class="col-md-6">
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label"><?= Html::label('Description', null, []); ?></label>
                 <div class="col-sm-9">
@@ -81,9 +82,7 @@ use app\models\Category
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
+        
         <div class="col-md-6">
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label"><?= Html::label('Image', null, []); ?></label>

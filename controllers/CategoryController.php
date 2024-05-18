@@ -39,7 +39,12 @@ class CategoryController extends Controller
     public function __construct($id, $module, $config = [])
     {
        
-        $this->layout = '@app/views/admin/applayout';
+        
+        $themeName = 'basic';
+        $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
+        $theme = Yii::$app->view->theme;
+        $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
+        
         parent::__construct($id, $module, $config);
     }
 

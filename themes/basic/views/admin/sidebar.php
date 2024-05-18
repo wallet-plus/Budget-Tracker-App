@@ -14,7 +14,7 @@ use yii\helpers\Url;
 AppAsset::register($this);
 
 ?>
-
+<!-- active -->
 <!--For User Image <?= Html::img('@web/users/' . Yii::$app->user->identity->image, ['alt' => 'Image', 'class'=>'w-full h-full rounded-full']) ?>
  -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
