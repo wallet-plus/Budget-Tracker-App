@@ -24,7 +24,7 @@ class CardsController extends Controller
     {
 
         
-        $themeName = 'basic';
+        $themeName =Yii::$app->params['currentTheme'];
         $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
         $theme = Yii::$app->view->theme;
         $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
@@ -63,22 +63,23 @@ class CardsController extends Controller
         $cards = Cards::find()->where(['id_customer' => Yii::$app->user->id])->all();
 
 
-        // $dataProvider = new ActiveDataProvider([
-        //     'query' => Cards::find(),
-        //     /*
-        //     'pagination' => [
-        //         'pageSize' => 50
-        //     ],
-        //     'sort' => [
-        //         'defaultOrder' => [
-        //             'id_card' => SORT_DESC,
-        //         ]
-        //     ],
-        //     */
-        // ]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Cards::find(),
+            /*
+            'pagination' => [
+                'pageSize' => 50
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'id_card' => SORT_DESC,
+                ]
+            ],
+            */
+        ]);
 
         return $this->render('index', [
             'cards' => $cards,
+            'dataProvider' => $dataProvider
         ]);
     }
 

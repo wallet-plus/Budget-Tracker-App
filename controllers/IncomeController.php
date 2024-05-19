@@ -22,7 +22,7 @@ class IncomeController extends Controller
 
     public function __construct($id, $module, $config = [])
     {
-        $themeName = 'basic';
+        $themeName =Yii::$app->params['currentTheme'];
         $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
         $theme = Yii::$app->view->theme;
         $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];

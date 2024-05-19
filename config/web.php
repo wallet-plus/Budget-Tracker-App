@@ -6,6 +6,7 @@ use \yii\web\Request;
 $baseUrl = str_replace('/web', '', (new Request)->getBaseUrl());
 
 $config = [
+    'name' => 'Wallet Plus',
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -27,10 +28,10 @@ $config = [
     'components' => [
         'view' => [
             'theme' => [
-                'basePath' => '@webroot/themes/basic',
-                'baseUrl' => '@web/themes/basic',
+                'basePath' => '@webroot/themes/',
+                'baseUrl' => '@web/themes/',
                 'pathMap' => [
-                    '@app/views' => '@webroot/themes/basic',
+                    '@app/views' => '@webroot/themes/',
                 ],
             ],
         ],

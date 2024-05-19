@@ -70,7 +70,7 @@ AppAsset::register($this);
 
           <li class="nav-item">
             <a class="nav-link" href="<?= Url::to(['/site/profile']);?>">
-              <i class="icon-paper menu-icon"></i>
+              <i class="icon-head menu-icon"></i>
               <span class="menu-title">Profile</span>
             </a>
           </li>

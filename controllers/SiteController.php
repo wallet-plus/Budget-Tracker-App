@@ -163,7 +163,7 @@ class SiteController extends Controller
         }
         /** Week wise */
 
-        $themeName = 'basic';
+        $themeName =Yii::$app->params['currentTheme'];
         $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
         $theme = Yii::$app->view->theme;
         $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
@@ -301,7 +301,7 @@ class SiteController extends Controller
             $this->redirect(['dashboard']);
         }
 
-        $themeName = 'basic';
+        $themeName =Yii::$app->params['currentTheme'];
         $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
         $theme = Yii::$app->view->theme;
         $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
@@ -336,7 +336,7 @@ class SiteController extends Controller
             return $this->redirect(['login']);
         }
 
-        $themeName = 'basic';
+        $themeName =Yii::$app->params['currentTheme'];
         $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
         $theme = Yii::$app->view->theme;
         $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
@@ -449,7 +449,7 @@ class SiteController extends Controller
             $this->redirect(['dashboard']);
         }
 
-        $themeName = 'basic';
+        $themeName =Yii::$app->params['currentTheme'];
         $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
         $theme = Yii::$app->view->theme;
         $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
