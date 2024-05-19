@@ -271,19 +271,22 @@ class SiteController extends Controller
 
         //change this to your email. 
         
-        
-
-       
-        // Set content-type header for sending HTML email 
-        $headers = "MIME-Version: 1.0" . "\r\n"; 
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
-        $headers .= 'From: '.$fromName.'<'.$from.'>' . "\r\n"; 
-        $headers .= 'Cc: '.$email['cc_email'] . "\r\n";  
-        if(mail($to, $subject, $htmlContent, $headers)){ 
-            return true;
-        }else{ 
-            return false;
-        }
+        // exit("Control here");
+        // if(false){
+        //     return true;
+        // }else{
+        //     // Set content-type header for sending HTML email 
+        //     $headers = "MIME-Version: 1.0" . "\r\n"; 
+        //     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+        //     $headers .= 'From: '.$fromName.'<'.$from.'>' . "\r\n"; 
+        //     $headers .= 'Cc: '.$email['cc_email'] . "\r\n";  
+        //     if(mail($to, $subject, $htmlContent, $headers)){ 
+        //         return true;
+        //     }else{ 
+        //         return false;
+        //     }
+        // }
+        return true;
     }
 
 
