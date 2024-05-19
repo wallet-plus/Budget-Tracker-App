@@ -41,24 +41,39 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * BOOTSTRAP
 * JQuery
 
+## Setup Instructions
 
+### Step 1: Install XAMPP / WAMP / LAMP Server
+1. Download and install XAMPP, WAMP, or LAMP server on your system.
+   - [XAMPP Download](https://www.apachefriends.org/index.html)
+   - [WAMP Download](http://www.wampserver.com/en/)
+   - [LAMP Setup Guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-20-04)
 
-CONFIGURATION
--------------
+### Step 2: Clone the Repository
+2. Open your terminal or command prompt.
+3. Clone the repository using the following command:
+   ```bash
+   git clone https://github.com/your-repo-url.git
+   Navigate to the project directory:
+   cd your-repo-directory
+### Step 3: Install Composer and Run Composer Install
+Download and install Composer from getcomposer.org.
+In your terminal, navigate to the project directory if not already there and run:
+composer install
+### Step 4: Create Database
+Open PHPMyAdmin (usually accessible at http://localhost/phpmyadmin).
+Create a new database named walletplus.
+### Step 5: Import Database
+In PHPMyAdmin, select the walletplus database.
+Go to the Import tab.
+Click Choose File and select the SQL file located in the database folder of the project.
+Click Go to import the database.
+### Step 6: Login to Admin Account
+Use the following credentials to log in to the admin account:
+Username: admin
+Password: 1234567890
+You're all set! If you encounter any issues, please check the documentation or raise an issue in the repository. `[[https://github.com/Wallet-Plus/Budget-Tracker-App](https://github.com/Wallet-Plus/Budget-Tracker-App)]` 
 
-### Database
-
-Edit the file `config/db.php` with real data, for example:
-
-```php
-return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'root',
-    'password' => '1234',
-    'charset' => 'utf8',
-];
-```
 
 
 <!-- CONTRIBUTING -->
