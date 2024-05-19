@@ -10,94 +10,73 @@ use yii\helpers\Url;
 $this->title = 'Login ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<link rel="stylesheet" href="<?php echo Url::base()?>/css/auth-styles.css">
 
-<section class="w3l-download-main registration-section ">
-    <div class="download-content text-center py-5">
-        <div class="container py-lg-4">
-            <h3 class="title-big">Login with your <span>Username & Password</span>.<br> </h3>
-            <h6>Manage your Income & Expenses</h6>
-        </div>
 
-        
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div class="brand-logo">
+                <img src="../../images/logo.svg" alt="logo">
+              </div>
+              <h4>Hello! let's get started</h4>
+              <h6 class="font-weight-light">Sign in to continue.</h6>
+                <?php
+                    $form = ActiveForm::begin([
+                                'id' => 'login-form',
+                                'layout' => 'horizontal',
+                                'options' => ['autocomplete' => 'off'],
+                                'fieldConfig' => [
+                                // 'template' => "{label}\n{input}\n{error}",
+                                // 'labelOptions' => ['class' => 'col-lg-1 col-form-label mr-lg-3'],
+                                // 'inputOptions' => ['class' => 'col-lg-3 form-control'],
+                                // 'errorOptions' => ['class' => 'col-lg-7 invalid-feedback'],
+                                ],
+                    ]);
+                ?>
 
-        <?php
-        $form = ActiveForm::begin([
-                    'id' => 'login-form',
-                    'layout' => 'horizontal',
-                    'options' => ['autocomplete' => 'off'],
-                    'fieldConfig' => [
-                    // 'template' => "{label}\n{input}\n{error}",
-                    // 'labelOptions' => ['class' => 'col-lg-1 col-form-label mr-lg-3'],
-                    // 'inputOptions' => ['class' => 'col-lg-3 form-control'],
-                    // 'errorOptions' => ['class' => 'col-lg-7 invalid-feedback'],
-                    ],
-        ]);
-        ?>
-
-        <div>
-            <?php if (Yii::$app->session->hasFlash('success')): ?>
-                <div class="alert alert-success alert-dismissable">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                    <!-- <h4><i class="icon fa fa-check"></i>Saved!</h4> -->
-                    <i class="icon fa fa-check"></i> <?= Yii::$app->session->getFlash('success') ?>
+                <div class="form-group">
+                  <!-- <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username"> -->
+                  <?php echo Html::activeTextInput($model, 'username', ['autoComplete' =>'nope', 'class'=>'form-control form-control-lg', 'placeholder'=>$model->getAttributeLabel('username')]); ?>
+                  <?php echo Html::error($model, 'username'); ?>
                 </div>
-            <?php endif; ?>
-
-            <?php if (Yii::$app->session->hasFlash('error')): ?>
-                <div class="alert alert-danger alert-dismissable">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                    <!-- <h4><i class="icon fa fa-check"></i>Saved!</h4> -->
-                    <i class="icon fa fa-check"></i> <?= Yii::$app->session->getFlash('error') ?>
+                <div class="form-group">
+                  <!-- <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> -->
+                  <?php echo Html::activePasswordInput($model, 'password', ['autoComplete' =>'nope', 'class'=>'form-control form-control-lg', 'placeholder'=>$model->getAttributeLabel('password')]); ?>
+                  <?php echo Html::error($model, 'password'); ?>
                 </div>
-            <?php endif; ?>
-        </div>
-
-        <div class="onset">
-            <div class="form-label">
-                <label for="mId" id="mail-id"><?php echo Html::activeLabel($model, 'username' )?> *</label>
-            </div>
-            <div class="form-input">
-            
-                <?php echo Html::activeTextInput($model, 'username', ['autoComplete' =>'nope']); ?>
-                <!-- Attempt 1 : ['autocomplete' =>'off']-->
-                <!-- Attempt 2 : , ['inputOptions' => ['autocomplete' => 'off']]-->
-                <?php echo Html::error($model, 'username'); ?>
-            </div>
-        </div>
-
-
-
-        <div class="onset">
-            <div class="form-label">
-                <label for="Pword" id="passwd"><?php echo Html::activeLabel($model, 'password' )?> *</label>
-            </div>
-            <div class="form-input">
-                <?php echo Html::activePasswordInput($model, 'password'); ?>
-                <?php echo Html::error($model, 'password'); ?>
-            </div>
-        </div>
-
-
-        <!-- checkbox division -->
-        <div class="onset">
-            <div class="check-div">
-                <div id="check">
-                    <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                <div class="mt-3">
+                  <?= Html::submitButton('SIGN IN', ['name' => 'login-button', 'id' => 'create-btn', 'class' => "btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"]) ?>
                 </div>
-                <span id="terms-cond"> 
-                     <?= Html::a("Forgot Password", ['/site/forgot-password']) ?>
-                </span>
-            </div>        
-        </div>
-        
-        <div class="onset">
-            <div class="form">
-                <?= Html::submitButton('Sign in', ['name' => 'login-button', 'id' => 'create-btn', 'class' => "btn btn-style btn-primary"]) ?>
+                <div class="my-2 d-flex justify-content-between align-items-center">
+                  <div class="form-check">
+                    <label class="form-check-label text-muted">
+                      <input type="checkbox" class="form-check-input">
+                      <!-- <?= $form->field($model, 'rememberMe')->checkbox() ?> -->
+                      Keep me signed in
+                    </label>
+                  </div>
+                  <?= Html::a("Forgot Password", ['/site/forgot-password'], ['class' => 'auth-link text-black']) ?>
+                </div>
+                <!-- <div class="mb-2">
+                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
+                    <i class="ti-facebook mr-2"></i>Connect using facebook
+                  </button>
+                </div> -->
+                <div class="text-center mt-4 font-weight-light">
+                  Don't have an account? 
+                  <?= Html::a("Create ", ['/site/register'], ['class' => 'text-primary']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
             </div>
-
-            <?php ActiveForm::end(); ?>
+          </div>
         </div>
-
-</section>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
 
