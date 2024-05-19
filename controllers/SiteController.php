@@ -270,23 +270,20 @@ class SiteController extends Controller
         // 7: Password Updated 
 
         //change this to your email. 
-        
-        // exit("Control here");
-        // if(false){
-        //     return true;
-        // }else{
-        //     // Set content-type header for sending HTML email 
-        //     $headers = "MIME-Version: 1.0" . "\r\n"; 
-        //     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
-        //     $headers .= 'From: '.$fromName.'<'.$from.'>' . "\r\n"; 
-        //     $headers .= 'Cc: '.$email['cc_email'] . "\r\n";  
-        //     if(mail($to, $subject, $htmlContent, $headers)){ 
-        //         return true;
-        //     }else{ 
-        //         return false;
-        //     }
-        // }
-        return true;
+        if(Yii::$app->params['productionMode'] === true){
+            // Set content-type header for sending HTML email 
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+            $headers .= 'From: '.$fromName.'<'.$from.'>' . "\r\n"; 
+            $headers .= 'Cc: '.$email['cc_email'] . "\r\n";  
+            if(mail($to, $subject, $htmlContent, $headers)){ 
+                return true;
+            }else{ 
+                return false;
+            }
+        } else {
+            return true;
+        }
     }
 
 
