@@ -1,10 +1,6 @@
 <?php
 use yii\helpers\Url;
 use yii\bootstrap4\Html;
-
-// echo "<pre>";
-// print_r( Yii::$app->user->identity);
-// exit;
 ?>
 
 <project class="ng-star-inserted">

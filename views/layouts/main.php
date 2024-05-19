@@ -76,14 +76,11 @@ use yii\helpers\Url;
                   </li>
 
                   <li class="nav-item <?php echo ($this->context->route == 'site/register')?'active':''; ?>">
-                    <?php echo Html::a('Register', 'https://secure.walletplus.in/signup', ['class' => 'nav-link']); ?>
+                    <?php echo Html::a('Register', ['/site/register'], ['class' => 'nav-link']); ?>
                   </li>
 
                   <li class="nav-item <?php echo ($this->context->route == 'site/login')?'active':''; ?>">
-                    <?php echo Html::a('Login', 'https://secure.walletplus.in/signin', ['class' => 'nav-link']); ?>
-                  </li>
-                  <li class="nav-item ml-3 mr-2">
-                      <a href="https://walletplus.in/walletplus-android-app-v1.apk" class="btn btn-primary d-none d-lg-block btn-style">Download App</a>
+                    <?php echo Html::a('Login', ['/site/login'], ['class' => 'nav-link']); ?>
                   </li>
               </ul>
           </div>

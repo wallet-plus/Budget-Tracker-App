@@ -70,6 +70,8 @@ class SiteController extends Controller
     {
 
 
+        
+        // $this->layout = '@app/views/admin/applayout';
         // function x_week_range($date) {
             $date = date("Y/m/d");
             
@@ -161,7 +163,11 @@ class SiteController extends Controller
         }
         /** Week wise */
 
-        $this->layout = '@app/views/admin/applayout';
+        $themeName = 'basic';
+        $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
+        $theme = Yii::$app->view->theme;
+        $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
+
         return $this->render('dashboard',[
             'expenseTotal' => ($expenseTotal)? $expenseTotal : 0,   
             'expenditureTotal' => ($expenditureTotal)?$expenditureTotal:0,    
@@ -292,6 +298,11 @@ class SiteController extends Controller
             $this->redirect(['dashboard']);
         }
 
+        $themeName = 'basic';
+        $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
+        $theme = Yii::$app->view->theme;
+        $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
+
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
 
@@ -322,7 +333,10 @@ class SiteController extends Controller
             return $this->redirect(['login']);
         }
 
-        $this->layout = '@app/views/admin/applayout';
+        $themeName = 'basic';
+        $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
+        $theme = Yii::$app->view->theme;
+        $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
 
         $model = Customer::findOne(['id' => Yii::$app->user->id]) ;
 
@@ -431,6 +445,11 @@ class SiteController extends Controller
         if (!Yii::$app->user->isGuest) {
             $this->redirect(['dashboard']);
         }
+
+        $themeName = 'basic';
+        $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
+        $theme = Yii::$app->view->theme;
+        $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
 
         $model = new Customer();
         if ($this->request->isPost) {
