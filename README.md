@@ -68,8 +68,8 @@ Click Go to import the database.
 
 #### Step 6: Login to Admin Account
 Use the following credentials to log in to the admin account:
-```Username: 1234567890
-Password: admin```
+Username: 1234567890 / Password: admin
+
 You're all set! If you encounter any issues, please check the documentation or raise an issue in the repository. https://github.com/Wallet-Plus/Budget-Tracker-App/issues
 ](https://github.com/Wallet-Plus/Budget-Tracker-App/issues)
 
