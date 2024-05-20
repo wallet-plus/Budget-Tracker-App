@@ -47,27 +47,30 @@ This section should list any major frameworks/libraries used to bootstrap your p
 3. Navigate to the `htdocs` directory of XAMPP. The location of the `htdocs` directory varies based on your operating system:
 4. Clone the repository using the following command:
    ```bash
-   git clone https://github.com/your-repo-url.git
+   git clone https://github.com/Wallet-Plus/Budget-Tracker-App.git
    Navigate to the project directory:
    cd your-repo-directory
+   
 #### Step 3: Install Composer and Run Composer Install
 Download and install Composer from getcomposer.org.
 In your terminal, navigate to the project directory if not already there and run:
 composer install
+
 #### Step 4: Create Database
 Open PHPMyAdmin (usually accessible at http://localhost/phpmyadmin).
 Create a new database named walletplus.
+
 #### Step 5: Import Database
 In PHPMyAdmin, select the walletplus database.
 Go to the Import tab.
 Click Choose File and select the SQL file located in the database folder of the project.
 Click Go to import the database.
+
 #### Step 6: Login to Admin Account
 Use the following credentials to log in to the admin account:
-Username: admin
-Password: 1234567890
-You're all set! If you encounter any issues, please check the documentation or raise an issue in the repository. `[[https://github.com/Wallet-Plus/Budget-Tracker-App](https://github.com/Wallet-Plus/Budget-Tracker-App)]` 
-
+Username: 1234567890
+Password: admin
+You're all set! If you encounter any issues, please check the documentation or raise an issue in the repository. `[https://github.com/Wallet-Plus/Budget-Tracker-App](https://github.com/Wallet-Plus/Budget-Tracker-App)` 
 
 
 <!-- CONTRIBUTING -->
