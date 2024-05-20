@@ -24,12 +24,10 @@ Here's why:
 * Budgeting and spending tracking : WalletPlus can help you track your spending and create a budget. WalletPlus offer features that allow you to monitor your transactions and expenses, giving you greater control over your finances.
 * Security : WalletPlus more secure than traditional payment methods because WalletPlus use encryption technology to protect your payment information. This means that your sensitive information is not stored on the merchant's server, reducing the risk of fraud and identity theft.
 * Convenience : WalletPlus allow you to store all your payment information in one place, making it easy to access and use whenever you need. You don't need to carry multiple credit cards or cash, which can be particularly useful when traveling.
-* Loyalty rewards : WalletPlus offer loyalty rewards and cashback programs for using their platform. This can be an added benefit for users who frequently make purchases using their digital wallet.
 
 
 
-### Built With
-
+## Built With
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * PHP , Yii2
@@ -52,19 +50,19 @@ This section should list any major frameworks/libraries used to bootstrap your p
    git clone https://github.com/your-repo-url.git
    Navigate to the project directory:
    cd your-repo-directory
-### Step 3: Install Composer and Run Composer Install
+#### Step 3: Install Composer and Run Composer Install
 Download and install Composer from getcomposer.org.
 In your terminal, navigate to the project directory if not already there and run:
 composer install
-### Step 4: Create Database
+#### Step 4: Create Database
 Open PHPMyAdmin (usually accessible at http://localhost/phpmyadmin).
 Create a new database named walletplus.
-### Step 5: Import Database
+#### Step 5: Import Database
 In PHPMyAdmin, select the walletplus database.
 Go to the Import tab.
 Click Choose File and select the SQL file located in the database folder of the project.
 Click Go to import the database.
-### Step 6: Login to Admin Account
+#### Step 6: Login to Admin Account
 Use the following credentials to log in to the admin account:
 Username: admin
 Password: 1234567890
