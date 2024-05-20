@@ -38,13 +38,13 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## Setup Instructions
 
-### Step 1: Install XAMPP / WAMP / LAMP Server
+#### Step 1: Install XAMPP / WAMP / LAMP Server
 1. Download and install XAMPP, WAMP, or LAMP server on your system.
    - [XAMPP Download](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.33/xampp-windows-x64-7.4.33-0-VC15-installer.exe/download)
    - [WAMP Download](http://www.wampserver.com/en/)
    - [LAMP Setup Guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-20-04)
 
-### Step 2: Clone the Repository
+#### Step 2: Clone the Repository
 2. Open your terminal or command prompt.
 3. Navigate to the `htdocs` directory of XAMPP. The location of the `htdocs` directory varies based on your operating system:
 4. Clone the repository using the following command:
