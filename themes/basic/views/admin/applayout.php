@@ -62,7 +62,7 @@ AppAsset::register($this);
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="<?php echo Yii::$app->view->theme->baseUrl; ?>/basic/images/faces/face28.jpg" alt="profile"/>
+              <?= Html::img('@web/users/' . Yii::$app->user->identity->image, ['alt' => 'Image' ]) ?>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
