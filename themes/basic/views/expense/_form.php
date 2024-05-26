@@ -10,6 +10,8 @@ use app\models\Category
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
+<link rel="stylesheet" href="<?php echo Yii::$app->view->theme->baseUrl; ?>/basic/vendors/select2/select2.min.css">
+
 
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 <form class="form-sample">
@@ -39,9 +41,9 @@ use app\models\Category
                         $model,
                         'id_category',
                         $catagories,
-                        array('prompt' => '--Select Category--', 'class' => 'form-control')
+                        array('prompt' => '--Select Category--', 'class' => 'form-control js-example-basic-single')
                     ) ?>
-                    <?php echo Html::error($model, 'id_category', ['class' => 'mat-form-field-infix']); ?>
+                    <?php echo Html::error($model, 'id_category', ['class' => 'help-block']); ?>
                 </div>
             </div>
         </div>
@@ -87,13 +89,11 @@ use app\models\Category
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label"><?= Html::label('Image', null, []); ?></label>
                 <div class="col-sm-9">
-                    <?= $form->field($model, 'imageFile')->fileInput(['accept' => 'image/*', ['class' => 'form-control']]) ?>
+                    <?= $form->field($model, 'imageFile')->fileInput(['accept' => 'image/*', ['class' => 'form-control']])->label(false) ?>
                     <?php echo Html::error($model, 'image', ['class' => 'help-block']); ?>
                 </div>
             </div>
         </div>
-
-
     </div>
 
  
@@ -104,7 +104,9 @@ use app\models\Category
 
 
 <?php ActiveForm::end(); ?>
-
+<script src="<?php echo Yii::$app->view->theme->baseUrl; ?>/basic/vendors/js/vendor.bundle.base.js"></script>
+<script src="<?php echo Yii::$app->view->theme->baseUrl; ?>/basic/vendors/select2/select2.min.js"></script>
+<script src="<?php echo Yii::$app->view->theme->baseUrl; ?>/basic/js/select2.js"></script>
 <script>
     function validateNumberInput(input) {
         input.value = input.value.replace(/[^\d.]/g, '');
