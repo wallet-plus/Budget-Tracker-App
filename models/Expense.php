@@ -43,9 +43,10 @@ class Expense extends \yii\db\ActiveRecord
             [['expense_name', 'id_category', 'amount', 'date_of_transaction'], 'required'],
             [['description'], 'string'],
             [['date_of_transaction', 'date_created', 'date_updated'], 'safe'],
-            [['expense_name','image', 'amount'], 'string', 'max' => 255],
+            [['expense_name','image'], 'string', 'max' => 255],
             [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg, pdf'],
             // [['date_of_transaction'], 'date', 'format' => 'yyyy-MM-dd'],
+            ['amount', 'number', 'min' => 0, 'max' => 9999999.99]
         ];
     }
 

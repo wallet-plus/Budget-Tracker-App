@@ -33,9 +33,9 @@ AppAsset::register($this);
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?= Url::to(['/income']);?>">Income</a></li>
                 <li class="nav-item"> <a class="nav-link" href="<?= Url::to(['/expense']);?>">Expenses</a></li>
                 <li class="nav-item"> <a class="nav-link" href="<?= Url::to(['/savings']);?>">savings</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?= Url::to(['/income']);?>">Income</a></li>
               </ul>
             </div>
           </li>

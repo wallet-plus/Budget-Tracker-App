@@ -51,7 +51,7 @@ use app\models\Category
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label"><?= Html::label('Amount', null, []); ?></label>
                 <div class="col-sm-9">
-                    <?php echo Html::activeTextInput($model, 'amount', ['class' => 'form-control']); ?>
+                    <?php echo Html::activeTextInput($model, 'amount', ['class' => 'form-control',  'type' => 'number', 'step' => '0.01', 'oninput' => 'validateNumberInput(this)']); ?>
                     <?php echo Html::error($model, 'amount', ['class' => 'help-block']); ?>
                 </div>
             </div>
@@ -104,3 +104,12 @@ use app\models\Category
 
 
 <?php ActiveForm::end(); ?>
+
+<script>
+    function validateNumberInput(input) {
+        input.value = input.value.replace(/[^\d.]/g, '');
+        if (input.value.split('.').length > 2) {
+            input.value = input.value.replace(/\.+$/, '');
+        }
+    }
+</script>
