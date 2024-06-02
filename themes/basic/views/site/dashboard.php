@@ -47,7 +47,7 @@ use yii\bootstrap4\Html;
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
             <div class="col-md-6 grid-margin transparent">
               <div class="row">

@@ -3,12 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Expense */
+/* @var $model app\models\ExpenseCategory */
 
-$this->title = Yii::t('app', 'Add Expense Details');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Expenses'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Card');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cards'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
 <div class="flex flex-col flex-auto min-w-0">
   <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
     <div class="flex-1 min-w-0">
@@ -34,15 +36,14 @@ $this->params['breadcrumbs'][] = $this->title;
   <div class="flex-auto p-6 sm:p-10">
     <div class="max-w-3xl">
       <div class="prose prose-sm max-w-3xl">
-        <!-- <p> By default, Fuse changes the default form field appearance to <em>fill</em> and heavily modifies it to provide a more unique and consistent look. We <strong>DO NOT</strong> recommend using any other form field styles as they are not optimized for Fuse. </p> -->
-        <!-- <h2>Appearance</h2> -->
-        <!-- <p> Here's a very simple form layout to showcase the form fields. </p> -->
+    
       </div>
 
-      <!-- <?= $this->render('_form', [
+      <?= $this->render('_form', [
         'model' => $model,
-        'catagories' => $catagories
-        ]) ?> -->
+        // 'catagories' => $catagories,
+        'types' => $types
+        ]) ?>
     </div>
   </div>
 </div>

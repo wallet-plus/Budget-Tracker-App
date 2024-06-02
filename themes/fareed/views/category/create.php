@@ -3,20 +3,33 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Expense */
+/* @var $model app\models\ExpenseCategory */
 
-$this->title = Yii::t('app', 'Add Expense Details');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Expenses'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Category');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Categories'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
 <div class="flex flex-col flex-auto min-w-0">
   <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
     <div class="flex-1 min-w-0">
       <div class="flex flex-wrap items-center font-medium">
         <div>
-        <?= Html::a('Home', ['/site/dashboard'], ['class'=>'mat-focus-indicator mat-button mat-button-base']) ?>
+          <?= Html::a('Home', ['/site/dashboard'], ['class'=>'mat-focus-indicator mat-button mat-button-base']) ?>
         </div>
+        
         <div class="flex items-center ml-1 whitespace-nowrap">
+
+
+          <mat-icon role="img" class="mat-icon notranslate icon-size-5 text-secondary mat-icon-no-color" aria-hidden="true" ng-reflect-svg-icon="heroicons_solid:chevron-right" data-mat-icon-type="svg" data-mat-icon-name="chevron-right" data-mat-icon-namespace="heroicons_solid">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </mat-icon>
+
+          <?= Html::a('Category', ['/category/index'], ['class'=>'ml-1 text-primary-500']) ?>
+
           <mat-icon role="img" class="mat-icon notranslate icon-size-5 text-secondary mat-icon-no-color" aria-hidden="true" ng-reflect-svg-icon="heroicons_solid:chevron-right" data-mat-icon-type="svg" data-mat-icon-name="chevron-right" data-mat-icon-namespace="heroicons_solid">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
               <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
@@ -39,10 +52,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- <p> Here's a very simple form layout to showcase the form fields. </p> -->
       </div>
 
-      <!-- <?= $this->render('_form', [
+      <?= $this->render('_form', [
         'model' => $model,
-        'catagories' => $catagories
-        ]) ?> -->
+        'catagories' => $catagories,
+        'types' => $types
+        ]) ?>
     </div>
   </div>
 </div>

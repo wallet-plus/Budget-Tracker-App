@@ -3,12 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Expense */
+/* @var $model app\models\ExpenseCategory */
 
-$this->title = Yii::t('app', 'Add Expense Details');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Expenses'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Update Cards: ' . $model->id_card;
+$this->params['breadcrumbs'][] = ['label' => 'Cards', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->id_card, 'url' => ['view', 'id_card' => $model->id_card]];
+$this->params['breadcrumbs'][] = 'Update';
 ?>
+
 <div class="flex flex-col flex-auto min-w-0">
   <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
     <div class="flex-1 min-w-0">
@@ -39,10 +41,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- <p> Here's a very simple form layout to showcase the form fields. </p> -->
       </div>
 
-      <!-- <?= $this->render('_form', [
+      <?= $this->render('_form', [
         'model' => $model,
-        'catagories' => $catagories
-        ]) ?> -->
+        // 'catagories' => $catagories,
+        'types' => $types
+        ]) ?>
     </div>
   </div>
 </div>

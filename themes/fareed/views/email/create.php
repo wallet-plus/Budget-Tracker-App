@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Expense */
 
-$this->title = Yii::t('app', 'Add Expense Details');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Expenses'), 'url' => ['index']];
+$this->title = 'Create Email';
+$this->params['breadcrumbs'][] = ['label' => 'Emails', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="flex flex-col flex-auto min-w-0">
@@ -39,10 +39,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- <p> Here's a very simple form layout to showcase the form fields. </p> -->
       </div>
 
-      <!-- <?= $this->render('_form', [
-        'model' => $model,
-        'catagories' => $catagories
-        ]) ?> -->
+      <?= $this->render('_form', [
+        'model' => $model
+        ]) ?>
     </div>
   </div>
 </div>

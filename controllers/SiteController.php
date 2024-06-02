@@ -73,7 +73,7 @@ class SiteController extends Controller
         
         // $this->layout = '@app/views/admin/applayout';
         // function x_week_range($date) {
-            $date = date("Y/m/d");
+            $date = '2024/05/20';// date("Y/m/d");
             
         // }
 
@@ -168,6 +168,17 @@ class SiteController extends Controller
         $theme = Yii::$app->view->theme;
         $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
 
+
+        $yearsQuery = Yii::$app->db->createCommand("
+        SELECT DISTINCT YEAR(date_of_transaction) as year 
+        FROM bt_expense 
+        ORDER BY year DESC
+        ")->queryAll();
+
+        $years = array_column($yearsQuery, 'year');
+        // print_r($years);
+        // exit('control here');
+
         return $this->render('dashboard',[
             'expenseTotal' => ($expenseTotal)? $expenseTotal : 0,   
             'expenditureTotal' => ($expenditureTotal)?$expenditureTotal:0,    
@@ -178,6 +189,10 @@ class SiteController extends Controller
             'weekWiseExpenses' => $weekWiseExpenses,
             'monthWiseExpenses' => $monthWiseExpenses,
             'yearWiseExpenses' => $yearWiseExpenses,
+
+            'years' => $years,
+
+
         ]);
     }
 
