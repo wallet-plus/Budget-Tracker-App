@@ -75,7 +75,16 @@ AppAsset::register($this);
                 ); ?>
             </li>
 
-            
+            <!-- Forms & Tables -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin </span></li>
+
+            <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Documentation">Categories</div>',
+                  ['/category/index'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li>
             
           </ul>
         </aside>

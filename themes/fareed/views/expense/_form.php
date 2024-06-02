@@ -89,7 +89,7 @@ use app\models\Category
                     <label class="col-sm-2 col-form-label"
                         for="basic-default-company"><?= Html::label('Image', null, []); ?></label>
                     <div class="col-sm-10">
-                        <?php if($model->image) { ?>
+                        <?php if($model->image) { ?> 
                             <?= Html::a(
                                 Html::img('@web/expenses/' . $model->image, [
                                     'width' => '100',

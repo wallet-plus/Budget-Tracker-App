@@ -18,8 +18,8 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 
   
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Profile</h4>
-
+    <h4 class="py-3 mb-4"><span class="text-muted fw-light"><?= Html::a('Home', ['/site/dashboard']) ?> /</span>
+    <?= Html::encode($this->title) ?></h4>
     <div class="row">
     <div class="col-md-12">
         <!-- <ul class="nav nav-pills flex-column flex-md-row mb-3">
