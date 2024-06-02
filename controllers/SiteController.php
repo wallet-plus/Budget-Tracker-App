@@ -90,7 +90,7 @@ class SiteController extends Controller
         // echo "select cat.category_name, exp.id_type, sum(exp.amount) as total from bt_expense exp, bt_category cat where cat.id_category=exp.id_category and exp.id_type=2 and exp.id_customer=".Yii::$app->user->id." and (date_of_transaction BETWEEN '2022-12-01' AND '2022-12-31') group by exp.id_category ORDER BY total DESC;";
         // exit;
         $categories = array();
-        $categoriesQuery = Yii::$app->db->createCommand("select cat.category_name, exp.id_type, sum(exp.amount) as total from bt_expense exp, bt_category cat where cat.id_category=exp.id_category and exp.id_type=2 and exp.id_customer=".Yii::$app->user->id." and (date_of_transaction BETWEEN '".$firstDayOfMonth."' AND '".$lastDayOfMonth."') group by exp.id_category ORDER BY total DESC;");
+        $categoriesQuery = Yii::$app->db->createCommand("select cat.category_name, cat.category_image, exp.id_type, sum(exp.amount) as total from bt_expense exp, bt_category cat where cat.id_category=exp.id_category and exp.id_type=2 and exp.id_customer=".Yii::$app->user->id." and (date_of_transaction BETWEEN '".$firstDayOfMonth."' AND '".$lastDayOfMonth."') group by exp.id_category ORDER BY total DESC;");
         
         $categoryResults = $categoriesQuery->queryAll();
         foreach( $categoryResults as $row ) {

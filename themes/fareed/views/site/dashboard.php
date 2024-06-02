@@ -252,10 +252,12 @@ use yii\bootstrap4\Html;
                                 <small class="text-success text-nowrap fw-medium"
                                   ><i class="bx bx-chevron-up"></i> 68.2%</small
                                 >
-                                <h3 class="mb-0"><?php 
-                            $expenseTotal = number_format((float)$expenseTotal, 2, '.', '');
-                            echo preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $expenseTotal);
-                            ?></h3>
+                                <h3 class="mb-0">
+                                  <?php 
+                                  $expenseTotal = number_format((float)$expenseTotal, 2, '.', '');
+                                  echo preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $expenseTotal);
+                                  ?>
+                            </h3>
                               </div>
                             </div>
                             <div id="profileReportChart"></div>
@@ -460,8 +462,8 @@ use yii\bootstrap4\Html;
                       <?php for ($i = 0; $i < count($categories) && $i < 6; $i++) { ?>
                         <?php $cat = $categories[$i]; ?>
                         <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="<?php echo Yii::$app->view->theme->baseUrl; ?>/fareed/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                          <div class="avatar flex-shrink-0 me-3"> 
+                            <?= Html::img('@web/category/' . $cat['category_image'] , ['class'=>'rounded', 'alt' => $cat['category_name']]) ?>
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
@@ -470,7 +472,11 @@ use yii\bootstrap4\Html;
                             </div>
                             <div class="user-progress d-flex align-items-center gap-1">
                               <span class="text-muted">Rs</span>
-                              <h6 class="mb-0"><?php echo $cat['total']; ?></h6>
+                              <h6 class="mb-0">
+                                <?php 
+                                  echo preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $cat['total']);
+                                  ?>
+                              </h6>
                             </div>
                           </div>
                         </li>

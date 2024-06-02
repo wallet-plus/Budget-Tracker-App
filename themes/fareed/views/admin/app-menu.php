@@ -85,6 +85,22 @@ AppAsset::register($this);
                   ['class' => 'menu-link', 'encode' => false]
                 ); ?>
             </li>
+
+            <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Emails">Emails</div>',
+                  ['/email/index'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li>
+
+            <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Email Templates">Email Templates</div>',
+                  ['/email-templates/index'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li>
             
           </ul>
         </aside>
