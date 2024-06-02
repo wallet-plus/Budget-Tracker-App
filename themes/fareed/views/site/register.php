@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="card-body">
                     <!-- Logo -->
                     <div class="app-brand justify-content-center">
-                        <a href="index.html" class="app-brand-link gap-2">
+                        <a  class="app-brand-link gap-2">
                             <span class="app-brand-logo demo">
                                 <?= Html::img('@web/images/walletplus-icon.png', [
                                     'alt' => 'Image',

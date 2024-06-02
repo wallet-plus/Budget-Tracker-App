@@ -28,7 +28,7 @@ AppAsset::register($this);
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-        <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span> <?php echo Yii::$app->name; ?></a></h1>
+        <h1><a class="navbar-brand" ><span class="fa fa-area-chart"></span> <?php echo Yii::$app->name; ?></a></h1>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 

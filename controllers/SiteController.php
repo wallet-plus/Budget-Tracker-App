@@ -531,6 +531,12 @@ class SiteController extends Controller
      */
     public function actionForgotPassword()
     {
+
+        $themeName =Yii::$app->params['currentTheme'];
+        $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
+        $theme = Yii::$app->view->theme;
+        $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
+        
         if (!Yii::$app->user->isGuest) {
             $this->redirect(['dashboard']);
         }
