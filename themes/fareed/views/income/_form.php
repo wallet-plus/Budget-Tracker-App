@@ -90,16 +90,18 @@ use app\models\Category
                         for="basic-default-company"><?= Html::label('Image', null, []); ?></label>
                     <div class="col-sm-10">
 
-                    <?= Html::a(
-                        Html::img('@web/expenses/' . $model->image, [
-                            'width' => '100',
-                            'height' => '100',
-                            'class' => 'd-block rounded',
-                            'id' => 'uploadedAvatar',
-                            'alt' => 'user-avatar'
-                        ]), 
-                        ['site/download-image', 'filename' => $model->image]
-                    ) ?>
+                        <?php if($model->image) { ?>
+                            <?= Html::a(
+                                Html::img('@web/expenses/' . $model->image, [
+                                    'width' => '100',
+                                    'height' => '100',
+                                    'class' => 'd-block rounded',
+                                    'id' => 'uploadedAvatar',
+                                    'alt' => 'user-avatar'
+                                ]), 
+                                ['site/download-image', 'filename' => $model->image]
+                            ) ?>
+                        <?php } ?>
                     
                         <?= $form->field($model, 'imageFile')->fileInput(['accept' => 'image/*'])->label(false) ?>
                         <?php echo Html::error($model, 'image'); ?>

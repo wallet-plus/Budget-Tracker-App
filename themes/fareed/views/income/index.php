@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- Basic Layout -->
     <div class="col-xxl">
       <div class="card mb-4">
-
+      <?php if (Yii::$app->session->hasFlash('success') || Yii::$app->session->hasFlash('error') ) { ?> 
         <div class="card-body">
           <?php if (Yii::$app->session->hasFlash('success')): ?>
               <div class="alert alert-success alert-dismissible" role="alert">
@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
               </div>
           <?php endif; ?>
         </div>
+        <?php } ?>
 
         <div class="card-header d-flex align-items-center justify-content-between">
           <h5 class="mb-0"><?= Html::encode($this->title) ?></h5>
