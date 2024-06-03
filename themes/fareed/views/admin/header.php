@@ -33,9 +33,8 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
 
     <meta name="description" content="" />
-
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?php echo Yii::$app->view->theme->baseUrl; ?>/fareed/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?php echo Yii::$app->request->baseUrl; ?>web/images/walletplus-icon.png" /> 
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
           <h5 class="mb-0"><?= Html::encode($this->title) ?></h5>
           <small class="text-muted float-end">
           <?= Html::a(Yii::t('app', ' <button type="button" class="btn btn-primary">
-              <span class="tf-icons bx bx-pie-chart-alt me-1"></span>Add Expense
+              <span class="tf-icons bx bx-plus me-1"></span> Add '.Html::encode($this->title).'
             </button>'), ['create'], ['class' => 'btn']) ?>           
           </small>
         </div>
