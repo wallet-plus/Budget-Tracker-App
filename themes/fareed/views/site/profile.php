@@ -123,6 +123,15 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
                         <?php echo Html::error($model,'email');?>
                     </div>
 
+                    <div class="mb-3 col-md-6">
+                        <label for="firstName" class="form-label"><?php echo Html::activeLabel($model, 'gender' )?></label>
+                        <?= Html::activeDropDownList($model, 'gender',
+                        array('1' => 'Male', '0' => 'Female'),
+                        array('class' => 'form-control')        
+                        ) ?>
+                        <?php echo Html::error($model,'gender');?>
+                    </div>
+
                 </div>
                 <div class="mt-2">
 

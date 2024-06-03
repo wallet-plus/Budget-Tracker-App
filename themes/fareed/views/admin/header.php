@@ -34,7 +34,7 @@ AppAsset::register($this);
 
     <meta name="description" content="" />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?php echo Yii::$app->request->baseUrl; ?>web/images/walletplus-icon.png" /> 
+    <link rel="icon" type="image/x-icon" href="<?php echo Yii::$app->request->baseUrl; ?>/images/walletplus-icon.png" /> 
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

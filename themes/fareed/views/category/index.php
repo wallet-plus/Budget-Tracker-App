@@ -5,6 +5,7 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use app\components\CustomLinkPager;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
@@ -58,28 +59,58 @@ $this->params['breadcrumbs'][] = $this->title;
 
           <?= GridView::widget([
           'dataProvider' => $dataProvider,
+          'summary' => false,
           'columns' => [
               ['class' => 'yii\grid\SerialColumn'],
               [
                 'attribute' => 'image',
-                'format' => 'html',
+                'format' => 'raw',
                 'value' => function ($data) {
-                    return (!!$data->category_image)?Html::img(Yii::$app->request->baseUrl.'/category/'.$data->category_image,
-                        ['width' => '60px', 'height' => '60px']): false;
+                    if ($data->category_image) {
+                        $imageUrl = Yii::$app->request->baseUrl . '/category/' . $data->category_image;
+                        return '<img class="d-block rounded" src="' . $imageUrl . '" width="60px" height="60px" alt="Profile Picture">';
+                    } else {
+                        return ''; // Return an empty string if no image available
+                    }
                 },
               ],
               'category_name',
-              'category_image',
-              'status',
+              [
+                'attribute' => 'status',
+                'value' => function ($data) {
+                    return $data->status == 1 ? '<span class="badge bg-label-success">Active</span>' : '<span class="badge bg-label-secondary">Inactive</span>';
+                },
+                'format' => 'html',
+              ],
               [
                 'class' => ActionColumn::className(),
                 'template' => '{update} {delete}', // Remove the '{view}' button
                 'urlCreator' => function ($action, app\models\ExpenseCategory $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id_category' => $model->id_category]);
                 },
+                'buttons' => [
+                  'update' => function ($url, $model, $key) {
+                      return Html::a('<button class="btn btn-sm btn-icon"><i class="bx bx-edit"></i></button>', $url, [
+                          'title' => Yii::t('app', 'Update'),
+                          'data-pjax' => '0',
+                      ]);
+                  },
+                  'delete' => function ($url, $model, $key) {
+                      return Html::a('<button class="btn btn-sm btn-icon delete-record"><i class="bx bx-trash"></i></button>', $url, [
+                          'title' => Yii::t('app', 'Delete'),
+                          'data' => [
+                              'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                              'method' => 'post',
+                          ],
+                      ]);
+                  },
+              ],
             ],
           ],
           'tableOptions' => ['class' => 'table table-hover'],
+          'pager' => [
+            'class' => \app\components\CustomLinkPager::class,
+          ],
           ]); ?>
 
            

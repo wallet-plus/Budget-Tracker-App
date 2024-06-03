@@ -13,6 +13,7 @@ use Yii;
  * @property string $lastname
  * @property string $username
  * @property string $email
+ * @property string $gender
  * @property string $password
  * @property string $otp
  * @property string $phone
@@ -46,6 +47,7 @@ class Customer extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
             [['id_customer_type', 'email_verified', 'mobile_verified'], 'integer'],
             [['date_of_birth','date_created', 'date_updated', 'firstname', 'lastname'], 'safe'],
             [['firstname', 'lastname', 'username', 'email', 'password', 'phone', 'email_verification_code', 'mobile_verification_code', 'authKey'], 'string', 'max' => 255],
+            [['gender'], 'string', 'max' => 4],
             [['otp'], 'string', 'max' => 4],
             [['ipaddress'], 'string'],
             ['username', 'unique','message'=>'Phone Number already exists!'],
@@ -67,6 +69,7 @@ class Customer extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
             'lastname' => 'Lastname',
             'username' => 'Phone number',
             'email' => 'Email',
+            'gender' => 'Gender',
             'password' => 'Password',
             'otp' => 'Otp',
             'phone' => 'Phone',
