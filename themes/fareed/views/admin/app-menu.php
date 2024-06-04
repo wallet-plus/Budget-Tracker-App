@@ -41,19 +41,20 @@ AppAsset::register($this);
             <!-- Dashboards -->
             <li class="menu-item">
             <?php echo Html::a(
-              '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Documentation">Dashboard</div>',
+              '<i class="menu-icon tf-icons bx bx-chart"></i> <div data-i18n="Documentation">Dashboard</div>',
               ['/site/dashboard'],
               ['class' => 'menu-link', 'encode' => false]
             ); ?>
             </li>
               
+  
 
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Budget </span></li>
 
             <li class="menu-item">
                 <?php echo Html::a(
-                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Documentation">Expenses</div>',
+                  '<i class="menu-icon tf-icons bx bx-wallet"></i> <div data-i18n="Documentation">Expenses</div>',
                   ['/expense/index'],
                   ['class' => 'menu-link', 'encode' => false]
                 ); ?>
@@ -61,7 +62,7 @@ AppAsset::register($this);
 
             <li class="menu-item">
                 <?php echo Html::a(
-                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Documentation">Income</div>',
+                  '<i class="menu-icon tf-icons bx bx-wallet"></i> <div data-i18n="Documentation">Income</div>',
                   ['/income/index'],
                   ['class' => 'menu-link', 'encode' => false]
                 ); ?>
@@ -69,14 +70,49 @@ AppAsset::register($this);
 
             <li class="menu-item">
                 <?php echo Html::a(
-                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Documentation">Savings</div>',
+                  '<i class="menu-icon tf-icons bx bx-wallet"></i> <div data-i18n="Documentation">Savings</div>',
                   ['/savings/index'],
                   ['class' => 'menu-link', 'encode' => false]
                 ); ?>
             </li>
 
+            <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon tf-icons bx bx-collection"></i> <div data-i18n="Cards">Cards</div>',
+                  ['/cards/index'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li>
+
+            <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon tf-icons bx bx-pie-chart-alt "></i> <div data-i18n="Reminders">Reminders</div>',
+                  ['/reminder/index'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li>
+
+
+            
+
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin </span></li>
+
+            <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon tf-icons bx bx-check-shield"></i> <div data-i18n="Roles & Permissions">Roles & Permissions</div>',
+                  ['/customer-types/index'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li>
+
+            <!-- <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Customers">Customers</div>',
+                  ['/customer/index'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li> -->
 
             <li class="menu-item">
                 <?php echo Html::a(
@@ -88,7 +124,7 @@ AppAsset::register($this);
 
             <li class="menu-item">
                 <?php echo Html::a(
-                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Emails">Emails</div>',
+                  '<i class="menu-icon tf-icons bx bx-detail"></i> <div data-i18n="Emails">Emails</div>',
                   ['/email/index'],
                   ['class' => 'menu-link', 'encode' => false]
                 ); ?>
@@ -96,12 +132,35 @@ AppAsset::register($this);
 
             <li class="menu-item">
                 <?php echo Html::a(
-                  '<i class="menu-icon tf-icons bx bx-file"></i> <div data-i18n="Email Templates">Email Templates</div>',
+                  '<i class="menu-icon tf-icons bx bx-carousel"></i> <div data-i18n="Email Templates">Email Templates</div>',
                   ['/email-templates/index'],
                   ['class' => 'menu-link', 'encode' => false]
                 ); ?>
             </li>
+
             
+            <!-- Forms & Tables -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Organization </span></li>
+
+            <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon bx bx-buildings"></i> <div data-i18n="Email Templates">Organization</div>',
+                  ['/email-templates/index'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li>
+
+
+            <li class="menu-item">
+                <?php echo Html::a(
+                  '<i class="menu-icon tf-icons bx bx-support"></i> <div data-i18n="Support">Support</div>',
+                  ['/site/support'],
+                  ['class' => 'menu-link', 'encode' => false]
+                ); ?>
+            </li>
+
+            
+
           </ul>
         </aside>
         <!-- / Menu -->

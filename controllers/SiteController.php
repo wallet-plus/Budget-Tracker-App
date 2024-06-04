@@ -726,4 +726,24 @@ class SiteController extends Controller
         
         return $this->render('personal-finance');
     }
+
+    /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionSupport()
+    {
+        // if (!Yii::$app->user->isGuest) {
+        //     $this->redirect(['dashboard']);
+        // }
+
+        $themeName =Yii::$app->params['currentTheme'];
+        $this->layout = '@app/themes/'.$themeName.'/views/admin/applayout';
+        $theme = Yii::$app->view->theme;
+        $theme->pathMap = ['@app/views' => '@app/themes/'.$themeName.'/views'];
+
+        return $this->render('support');
+    }
+
 }

@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use app\components\CustomLinkPager;
+use app\helpers\CurrencyFormatHelper;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -13,6 +14,7 @@ use app\components\CustomLinkPager;
 $this->title = Yii::t('app', 'Income');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 
 <div class="container-xxl flex-grow-1 container-p-y">
   <h4 class="py-3 mb-4"><span class="text-muted fw-light"><?= Html::encode($this->title) ?>/</span> <?= Html::encode($this->title) ?></h4>
@@ -62,10 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                       'attribute' => 'amount',
                       'value' => function ($data) {
-                          // Format the amount using the provided script
-                          $formattedAmount = number_format((float)$data->amount, 2, '.', '');
-                          $formattedAmountWithPrefix = 'Rs. ' . preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", $formattedAmount);
-                          return $formattedAmountWithPrefix;
+                          return CurrencyFormatHelper::formatCurrency($data->amount);
                       },
                     ],
                     'date_of_transaction',

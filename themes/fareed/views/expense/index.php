@@ -6,6 +6,7 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use app\components\CustomLinkPager;
+use app\helpers\CurrencyFormatHelper;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -62,7 +63,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
                     'expense_name',
-                    'amount',
+                    [
+                      'attribute' => 'amount',
+                      'value' => function ($data) {
+                          return CurrencyFormatHelper::formatCurrency($data->amount);
+                      },
+                    ],
                     'date_of_transaction',
                     [
                         'class' => ActionColumn::className(),
