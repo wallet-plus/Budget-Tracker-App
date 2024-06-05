@@ -16,8 +16,15 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 
-<div class="container-xxl flex-grow-1 container-p-y">
-  <h4 class="py-3 mb-4"><span class="text-muted fw-light"><?= Html::encode($this->title) ?>/</span> <?= Html::encode($this->title) ?></h4>
+<div class="container-xxl flex-grow-1 container-p-y ">
+  <div class="d-flex align-items-center justify-content-between mb-4" >
+    <h4 class="py-3 mb-0"><span class="text-muted fw-light"><?= Html::a('Home', ['/site/dashboard']) ?> / <?= Html::encode($this->title) ?></span></h4>
+    <small class="text-muted float-end">
+    <?= Html::a(Yii::t('app', ' <button type="button" class="btn btn-primary">
+        <span class="tf-icons bx bx-plus me-1"></span>Add '.Html::encode($this->title).'
+      </button>'), ['create'], ['class' => 'btn']) ?>           
+    </small>
+  </div>
 
   <!-- Basic Layout & Basic with Icons -->
   <div class="row">
@@ -42,13 +49,12 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <?php } ?>
 
-        <div class="card-header d-flex align-items-center justify-content-between">
-          <h5 class="mb-0"><?= Html::encode($this->title) ?></h5>
-          <small class="text-muted float-end">
-          <?= Html::a(Yii::t('app', ' <button type="button" class="btn btn-primary">
-              <span class="tf-icons bx bx-plus me-1"></span>Add '.Html::encode($this->title).'
-            </button>'), ['create'], ['class' => 'btn']) ?>           
-          </small>
+        <div class="card-header">
+          <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
+            <div class="col-md-4 product_status"><select id="ProductStatus" class="form-select text-capitalize"><option value="">Status</option><option value="Scheduled">Scheduled</option><option value="Publish">Publish</option><option value="Inactive">Inactive</option></select></div>
+            <div class="col-md-4 product_category"><select id="ProductCategory" class="form-select text-capitalize"><option value="">Category</option><option value="Household">Household</option><option value="Office">Office</option><option value="Electronics">Electronics</option><option value="Shoes">Shoes</option><option value="Accessories">Accessories</option><option value="Game">Game</option></select></div>
+            <div class="col-md-4 product_stock"><select id="ProductStock" class="form-select text-capitalize"><option value=""> Stock </option><option value="Out_of_Stock">Out of Stock</option><option value="In_Stock">In Stock</option></select></div>
+          </div>
         </div>
 
 

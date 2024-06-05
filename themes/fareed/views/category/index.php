@@ -17,8 +17,15 @@ $this->params['breadcrumbs'][] = $this->title;
  
 
 <div class="container-xxl flex-grow-1 container-p-y">
-<h4 class="py-3 mb-4"><span class="text-muted fw-light"><?= Html::a('Home', ['/site/dashboard']) ?> /</span>
-    <?= Html::encode($this->title) ?></h4>
+  <div class="d-flex align-items-center justify-content-between mb-4" >
+    <h4 class="py-3 mb-0"><span class="text-muted fw-light"><?= Html::a('Home', ['/site/dashboard']) ?> / <?= Html::encode($this->title) ?></span></h4>
+    <small class="text-muted float-end">
+    <?= Html::a(Yii::t('app', ' <button type="button" class="btn btn-primary">
+        <span class="tf-icons bx bx-plus me-1"></span>Add '.Html::encode($this->title).'
+      </button>'), ['create'], ['class' => 'btn']) ?>           
+    </small>
+  </div>
+
 
   <!-- Basic Layout & Basic with Icons -->
   <div class="row">
@@ -44,14 +51,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <?php } ?>
 
-        <div class="card-header d-flex align-items-center justify-content-between">
-          <h5 class="mb-0"><?= Html::encode($this->title) ?></h5>
-          <small class="text-muted float-end">
-          <?= Html::a(Yii::t('app', ' <button type="button" class="btn btn-primary">
-              <span class="tf-icons bx bx-plus me-1"></span> Add '.Html::encode($this->title).'
-            </button>'), ['create'], ['class' => 'btn']) ?>           
-          </small>
-        </div>
 
 
         <div class="card-body">
