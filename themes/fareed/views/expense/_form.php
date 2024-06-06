@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-use app\models\Category
+use app\models\Category;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Expense */
@@ -67,7 +67,7 @@ use app\models\Category
                     <div class="col-sm-10">
                         <?= $form->field($model, 'date_of_transaction')->widget(\yii\jui\DatePicker::class, [
                             'dateFormat' => 'php:d/m/Y',
-                            'options' => ['class' => 'form-control'],
+                            'options' => ['class' => 'form-control', 'type' => 'date'],
                         ])->label(false) ?>
 
                         <?php echo Html::error($model, 'date_of_transaction'); ?>
