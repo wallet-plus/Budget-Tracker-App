@@ -33,6 +33,12 @@ class Expense extends \yii\db\ActiveRecord
         return 'bt_expense';
     }
 
+    public function init()
+    {
+        parent::init();
+        $this->date_of_transaction = date('d/m/Y'); // Set today's date as the default value
+    }
+
     /**
      * {@inheritdoc}
      */
