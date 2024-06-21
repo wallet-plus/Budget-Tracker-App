@@ -76,6 +76,8 @@ AppAsset::register($this);
       ); ?>
     </li>
 
+    <?php if (Yii::$app->user->identity && Yii::$app->user->identity->id_customer_type == 1) { ?>
+
     <li class="menu-item">
       <?php echo Html::a(
         '<i class="menu-icon tf-icons bx bx-collection"></i> <div data-i18n="Cards">Cards</div>',
@@ -93,6 +95,7 @@ AppAsset::register($this);
     </li>
 
 
+    <?php } ?>
 
     <?php if (Yii::$app->user->identity && Yii::$app->user->identity->id_customer_type == 1) { ?>
 
