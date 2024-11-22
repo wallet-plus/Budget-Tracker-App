@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://beta.walletplus.in">
+  <a href="https://secure.walletplus.in">
     <img src="https://walletplus.in/images/walletplus-icon.png" alt="WalletPlus" width="80" height="80">
   </a>
 
